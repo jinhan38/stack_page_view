@@ -14,14 +14,17 @@ and the Flutter guide for
 You can use the PageView keeping position of items in Android and IOS.
 
 ## Features
-                      
-플러터에서 헤더가 있는 페이지뷰 형태를 구현하는 것은 생각보다 쉽지 않다.
-특정 페이지 아이템에서 스크롤을 위아래로 움직이면 다른 페이지 아이템까지 위아래로 스크롤 되는 문제가 있다.
-그리고 탭을 전환했을 때 각 페이지에서의 포지션이 유지가 안되고 초기화 되기도 한다.
-StackPageView는 이러한 문제를 해결하기 위해 만들어졌다.
+
+Implementing a headered pageview form in Flutter is not as easy as you might think.
+There is a problem in that when scrolling up and down on a specific page item, it scrolls up and down to other page items.
+And when you switch tabs, the position on each page is not maintained and sometimes initialized.
+StackPageView was created to solve this problem.
                
 
 ## Video
+
+![alt text](https://github.com/jinhan38/stack_page_view/blob/master/video/example_video.gif)
+
 
 
 ```dart
