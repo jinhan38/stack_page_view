@@ -14,13 +14,14 @@ and the Flutter guide for
 You can use the PageView keeping position of items in Android and IOS.
 
 ## Features
+                      
+플러터에서 헤더가 있는 페이지뷰 형태를 구현하는 것은 생각보다 쉽지 않다.
+특정 페이지 아이템에서 스크롤을 위아래로 움직이면 다른 페이지 아이템까지 위아래로 스크롤 되는 문제가 있다.
+그리고 탭을 전환했을 때 각 페이지에서의 포지션이 유지가 안되고 초기화 되기도 한다.
+StackPageView는 이러한 문제를 해결하기 위해 만들어졌다.
+               
 
-
-## Getting started
-
-
-
-## Usage
+## Video
 
 
 ```dart
@@ -40,7 +41,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  final List<String> _tabLabels = ["탭 A", "탭 B", "탭 C"];
+  final List<String> _tabLabels = ["Tab A", "Tab B", "Tab C"];
 
   List<ScrollController> scrollControllers = [];
 
@@ -70,12 +71,16 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("StackPageView"),
+        elevation: 0,
+      ),
       body: Column(
         children: [
           Expanded(
             child: StackPageView(
               header: _header(),
-              headerHeight: 150,
+              headerHeight: 100,
               tabBar: _tabBar(),
               timerPeriodic: 1,
               tabController: _tabController,
@@ -97,7 +102,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget _header() {
     return Container(
       color: Colors.blue,
-      height: 150,
+      height: 100,
       child: const Center(
         child: Text(
           "Header",
@@ -125,15 +130,15 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   List<Widget> _tabBarView() {
     return [
       PageItem(
-        text: "탭 A",
+        text: "Tab A",
         scrollController: scrollControllers[0],
       ),
       PageItem(
-        text: "탭 B",
+        text: "Tab B",
         scrollController: scrollControllers[1],
       ),
       PageItem(
-        text: "탭 C",
+        text: "Tab C",
         scrollController: scrollControllers[2],
       ),
     ];
