@@ -20,6 +20,9 @@ There is a problem in that when scrolling up and down on a specific page item, i
 And when you switch tabs, the position on each page is not maintained and sometimes initialized.
 StackPageView was created to solve this problem.
                
+               
+You can copy and run the example code below and configure it to fit the design you want.
+
 
 ## Video
 
